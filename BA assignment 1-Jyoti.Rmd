@@ -1,0 +1,58 @@
+---
+title: "Business Analytics Assignment1"
+author: "Jyoti Phogat"
+output: pdf_document
+date: "2022-09-25"
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Install the ISLR library using the install.packages() command
+```{r}
+install.packages("ISLR")
+library(ISLR)
+```
+
+```{r}
+install.packages("knitr") 
+library(knitr) 
+install.packages("tinytex") 
+tinytex::install_tinytex(force=TRUE) 
+```
+## importinmg carseats dataset
+```{r}
+library(ISLR)
+CarseatsData<-Carseats
+summary(CarseatsData)
+```
+## Carseat dataset has 400 observations and 11 variables
+
+```{r}
+str(CarseatsData)
+```
+## Maximum value of avertising attribute is 29.000
+```{r}
+summary(CarseatsData$Advertising)
+```
+
+## IQR of Price Attribute
+```{r}
+IQR(CarseatsData$Price)
+```
+
+##Plot between Sales and Price
+```{r}
+plot(CarseatsData$Sales, CarseatsData$Price, main="Scatter plot and linear fit between Sales and Price", xlab = "Sales",ylab = "Price")
+```
+
+## correlation of Price and sales
+```{r}
+library(dplyr)
+cor(select(CarseatsData,1,6))
+```
+## The corelation coefficient values above suggest there is weak negative linear corelation between both the attributes.
+
+
